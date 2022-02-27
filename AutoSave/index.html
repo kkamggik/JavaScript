@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.1)
+        }
+        .autosave-message {
+            color: greenyellow;
+        }
+        .autosave-message--saving {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Profile</h1>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" autofocus data-autosave-url="http://localhost:3000/save-profile">
+        <br/>
+        <label for="biography">Your Bio</label>
+        <textarea name="biography" id="biography" data-autosave-url="http://localhost:3000/save-profile">blah blah</textarea>
+        <div class="autosave-message"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
