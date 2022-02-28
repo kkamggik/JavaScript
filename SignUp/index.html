@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+    <div class="sign-up-container">
+        <div class="sign-up-left">
+            <img class="sign-up-logo" src="./lama.jpg" alt="logo">
+        </div>
+        <div class="sing-up-right">
+            <h1 class="sign-up-title">Ready to kick start your coding career?</h1>
+            <p class="sign-up-desc">
+                Join today and receive <strong>$20 off</strong> your first month.
+            </p>
+            <p class="sign-up-desc">
+                Already have an account? <a class="sign-up-link" href="./">Login here.</a>
+            </p>
+            <form action="./" method="POST">     
+                <ul class="sign-up-errors">
+                    <li>Please enter a name</li>
+                    <li>Please enter a valid email address</li>
+                </ul>
+                <div>
+                    <label for="inputName" class="sign-up-label">Name</label>
+                    <input type="text" name="inputName" class="sign-up-input">
+                </div>
+                <div>
+                    <label for="inputEmail" class="sign-up-label">Email Address</label>
+                    <input type="email" name="inputEmail" class="sign-up-input">
+                </div>
+                <div>
+                    <label for="inputPassword" class="sign-up-label">Password</label>
+                    <input type="password" name="inputPassword" class="sign-up-input">
+                </div>
+                <div>
+                    <button type="submit" class="sign-up-button">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

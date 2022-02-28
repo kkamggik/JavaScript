@@ -1,0 +1,99 @@
+html {
+    height:100%;
+}
+body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: url("./background.jpg");
+    background-size: cover;
+}
+
+.sign-up-container {
+    display: flex;
+    align-items: center;
+    width: 900px;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 1.4;
+    background-color: white;
+    color: #333333;
+    border-top: 5px solid pink;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1)
+}
+
+.sign-up-container * {
+    font-family: sans-serif;
+}
+
+.sign-up-left,
+.sign-up-right {
+    padding: 40px;
+}
+
+.sign-up-title {
+    margin-top: 0;
+    font-size: 2.5em;
+}
+
+.sign-up-link {
+    color: palevioletred;
+}
+
+.sign-up-errors {
+    color: rgb(240, 72, 72)
+}
+
+.sign-up-label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.sign-up-input {
+    width: 100%;
+    padding: 0.75em;
+    box-sizing: border-box;
+    font-size: 1em;
+    outline: none;
+    border: 2px solid #dddddd;
+}
+.sign-up-input:focus {
+    border-color: pink;
+}
+
+.sign-up-button {
+    display: block;
+    margin-left: auto;
+    margin-top: 15px;
+    padding: 0.8em 1.6em;
+    font-weight: bold;
+    font-size: 1.25em;
+    background: pink;
+    border: 0px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.sign-up-button:hover {
+    background: rgb(252, 179, 179)
+}
+
+
+@media screen and (max-width: 768px) {
+    body {
+        display: block;
+        padding: 0;
+    }
+    .sign-up-container {
+        display: block;
+        width: 100%;
+    }
+}
