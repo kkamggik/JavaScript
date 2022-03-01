@@ -1,0 +1,48 @@
+body {
+    color: red;
+}
+
+.title {
+    font-size: 6rem;
+}
+
+.subtitle {
+    font-size: 4rem;
+}
+
+/* top -> bottom 으로 진행되니까 media query는 밑에 넣어야댕 */
+
+/* 500px 보다 작으면 */
+@media all and (max-width: 500px) {
+    body {
+        color: blue;
+    }
+}
+
+/* 프린트 할때 */
+@media print {
+    body {
+        color: yellow;
+    }
+}
+
+@media (orientation: landscape) {
+    .title {
+        color: green;
+    }
+}
+
+@media (orientation: portrait){
+    .subtitle {
+        color: pink;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #333333;
+    }
+    .title, .subtitle {
+        color: white;
+    }
+}
