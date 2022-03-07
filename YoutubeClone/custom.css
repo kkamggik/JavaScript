@@ -25,7 +25,7 @@ body {
     font-family: sans-serif;
 }
 
-ul {
+ul, li {
     list-style: none;
 }
 
@@ -33,6 +33,7 @@ button, button:focus {
     border: none;
     cursor: pointer;
     outline: none;
+    background-color: var(--white-color);
 }
 
 header {
@@ -68,7 +69,7 @@ header .icons .fa-search {
     max-width: 1000px;
 }
 
-.info {
+.infoAndUpNext > .info {
     padding: var(--padding);
 }
 
@@ -92,4 +93,141 @@ header .icons .fa-search {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+    margin-right: var(--padding);
+}
+
+.info .metadata .titleAndButton .moreBtn {
+    height: 100%;
+}
+
+.info .view {
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+
+.info .actions {
+    display: flex;
+    justify-content: space-around;
+    margin: var(--padding) 0;
+}
+
+.info .actions button {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+
+.info .actions button i {
+    margin-bottom: calc(var(--padding) / 2);
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.info .actions button i.active {
+    color: var(--blue-color);
+}
+
+.info .channel {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--grey-light-color);
+    border-bottom: 1px solid var(--grey-light-color);
+}
+
+.info .channel .metadata {
+    display: flex;
+    align-items: center; 
+}
+
+.info .channel .metadata .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.info .channel .metadata img {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: 50%;
+}
+
+.info .channel .metadata .info .name {
+    font-size: var(--font-medium);
+}
+
+.info .channel .metadata .info .subscribers {
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+
+.info .channel .subscribe {
+    text-transform: uppercase;
+    color: var(--red-color);
+    font-size: var(--font-medium);
+}
+
+.upNext {
+    padding: 0 var(--padding);
+}
+
+.upNext > .title {
+    font-size: var(--font-medium);
+    color: var(--grey-dark-color);
+    margin-bottom: calc(var(--padding) / 2);
+}
+
+.upNext .item {
+    display: flex;
+    margin-top: var(--padding);
+}
+
+.upNext .item .img {
+    flex: 1 1 35%;
+    margin-right: var(--padding);
+}
+
+.upNext .item img {
+    width: 100%;
+}
+
+.upNext .item .info {
+    flex: 1 1 60%;
+}
+
+.upNext .item .moreBtn {
+    flex: 1 1 5%;
+}
+
+.upNext .item .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.upNext .item .info .title {
+    font-size: var(--font-small);
+}
+
+.upNext .item .info .name,
+.upNext .item .info .views {
+    font-size: var(--font-micro);
+    color: var(--grey-dark-color);
+}
+
+.infoAndUpNext {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+    .infoAndUpNext {
+        flex-direction: row;
+        margin: var(--padding) 0;
+    }
+    .info {
+        flex: 1;
+    }
+
+    .upNext {
+        flex: 1;
+    }
 }
