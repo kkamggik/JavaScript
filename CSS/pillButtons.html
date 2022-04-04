@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .pill {
+            font-size: 12px;
+            font-family: sans-serif;
+            padding: 0.5em 1em;
+            margin: 0.25em;
+            border-radius: 1em;
+            border: none;
+            outline: none;
+            background: #dddddd;
+            cursor: pointer;
+        }
+        .pill:not(.pill--selected):hover {
+            background: #cccccc;
+        }
+        .pill--selected {
+            background: #009578;
+            color:#ffffff;
+        }
+    </style>
+</head>
+<body>
+    <button class="pill" type="button">24 Hours</button>
+    <button class="pill pill--selected" type="button">Top Rated</button>
+    <script>
+        document.querySelectorAll('.pill').forEach(pill => {
+            pill.addEventListener('click', () => {
+                pill.classList.toggle('pill--selected')
+            })
+        })
+    </script>
+</body>
+</html>
