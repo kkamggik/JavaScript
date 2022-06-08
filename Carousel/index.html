@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carousel</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <section aria-label="Newest Photos">
+        <div class="carousel" data-carousel>
+            <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+            <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+            <ul data-slides>
+                <li class="slide" data-active>
+                    <img src="강아지.jpeg" alt="강아지">
+                </li>
+                <li class="slide">
+                    <img src="시바.jpeg" alt="시바">
+                </li>
+                <li class="slide">
+                    <img src="웰시코기.jpeg" alt="웰시코기">
+                </li>
+            </ul>
+        </div>
+    </section>
+    <script>
+        const buttons = document.querySelectorAll('[data-carousel-button]');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const offset = btn.dataset.carouselButton ===  "next" ? 1 : -1;
+                const slides = btn.closest("[data-carousel]").querySelector("[data-slides]");
+                
+                const active = slides.querySelector("[data-active]")
+                let newIndex = [...slides.children].indexOf(active) + offset;
+                if (newIndex < 0) newIndex = slides.children.length - 1;
+                if (newIndex >= slides.children.length) newIndex = 0;
+                slides.children[newIndex].dataset.active = true;
+                delete active.dataset.active;
+
+
+            })
+        })
+    </script>
+</body>
+
+</html>

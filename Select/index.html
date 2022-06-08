@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Select</title>
+    <style>
+        .dropdown-toggle{
+            width: 200px;
+            height: 40px;
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .hidden{
+            display: none;
+        }
+        .dropdown-menu {
+            padding: 0;
+            margin: 0;
+            width: 200px;
+            border: 1px solid grey;
+        }
+        .dropdown-item{
+            list-style: none;
+        }
+        .dropdown-option{     
+            width: 200px;
+            height: 40px;
+            background: white;
+            border: none;
+            text-align: left;
+        }
+        .dropdown-option:hover{     
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button type="button" class="dropdown-toggle">지점을 선택해주세요</button>
+        <ul class="dropdown-menu hidden">
+            <li class="dropdown-item">
+                <button type="button" value="1" class="dropdown-option">김버그피자 강남점</button>
+            </li>
+            <li class="dropdown-item">
+                <button type="button" value="2" class="dropdown-option">김버그피자 서초점</button>
+            </li>
+            <li class="dropdown-item">
+                <button type="button" value="3" class="dropdown-option">김버그피자 용인점</button>
+            </li>
+        </ul>
+    </div>
+    <button type="submit" class="next-button" disabled>다음</button>
+    <script>
+        const dropdown = document.querySelector('.dropdown');
+        const toggle = document.querySelector('.dropdown-toggle');
+        const menu = document.querySelector('.dropdown-menu');
+        const options = document.querySelectorAll('.dropdown-option')
+        const next = document.querySelector('.next-button')
+        options.forEach((option) => {
+            option.addEventListener('click', (e) => {
+                const title = e.currentTarget.textContent.trim();
+                toggle.textContent = title;
+                menu.classList.add('hidden');
+                next.removeAttribute('disabled')
+            })
+        })
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        })
+        // toggle.addEventListener('blur', () => {
+        //     console.log('blur')
+        //     menu.classList.remove('hidden');
+        // })
+        
+    </script>
+</body>
+</html>
